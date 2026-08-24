@@ -19,6 +19,9 @@ class Product(models.Model):
 class Review(models.Model):
     text = models.CharField(max_length=25)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    #homework-2/------------------------------------------------------------>
+    stars = models.IntegerField(choices=((i, i * '* ') for i in range(1, 6)),
+                                default=8)
 
     def __str__(self):
         return self.text

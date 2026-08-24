@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from . models import *
-from . serializer import CatySeriaList, CatySeriaDetail, ProdSeriaList,ProdSeriaDetail,ReviewSeriaDetail,ReviewSeriaList
+from . serializer import CatySeriaList,CatySeriaDetail, ProdSeriaList,ProdSeriaDetail,ReviewSeriaDetail,ReviewSeriaList,ProdRevSeriaList
 
 #1-Homework
 
@@ -14,7 +14,7 @@ def list_categories_api_view(request):
     list_ = CatySeriaList(category, many=True).data
     return Response(
         status=status.HTTP_200_OK,
-        data=list_
+        data = list_
     )
 @api_view(['GET'])
 def deatil_categories_api_view(request, id):
@@ -69,3 +69,10 @@ def detail_review_api_view(request, id):
     review = Review.objects.get(id=id)
     deatil = ReviewSeriaDetail(review, many=False).data
     return Response(data=deatil) 
+
+#Homework-2 
+@api_view(['GET'])
+def prod_review_list_api_views(request):
+    prod = Product.objects.all()
+    list_ = ProdRevSeriaList(prod,many = True).data
+    return Response(status=status.HTTP_200_OK,data=list_)
