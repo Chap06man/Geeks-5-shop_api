@@ -1,0 +1,397 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2026-08-19T17:52:16.180Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Телефоны",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2026-08-19T17:52:24.271Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "Ноутбуки",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2026-08-19T17:52:39.154Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Аксесуары",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2026-08-19T17:53:38.241Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "1",
+            "object_repr": "iPhone 13",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2026-08-19T17:54:21.894Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "2",
+            "object_repr": "Asus",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2026-08-19T17:55:17.237Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "3",
+            "object_repr": "JBL",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2026-08-19T17:57:00.931Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "Хороший товар",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2026-08-19T17:57:11.270Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "Очень понравился",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2026-08-19T17:57:28.173Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "3",
+            "object_repr": "Отличный звук",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2026-08-23T18:39:18.189Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "3",
+            "object_repr": "Отличный звук",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Stars\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2026-08-23T18:39:27.763Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "Очень понравился",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Stars\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2026-08-23T18:39:35.611Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "Хороший товар",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Stars\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2026-08-23T18:44:43.796Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "Очень понравился",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Stars\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2026-08-23T19:09:08.283Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "4",
+            "object_repr": "Hp elite book",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2026-08-24T19:47:07.675Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "4",
+            "object_repr": "Bad phone",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$1500000$MOhpZyuScPrzF2R6kY58Cf$3T7vnhhy7F2w6iIo9bJcR1upJk9n6TI780LXQ/ZM+xE=",
+            "last_login": "2026-09-02T20:37:05.345Z",
+            "is_superuser": true,
+            "username": "sardar",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-08-19T17:46:48.834Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$1500000$ngQe4VKp6z6KWGuDgN43rn$rJ3Ffg1qJGRyND9YOFEcwUrWFxOdF0JIy7e4W33Vgsg=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "a",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": false,
+            "date_joined": "2026-09-02T20:51:46.366Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$1500000$ArR8ASTPxa6IjEIojSpLTU$xZbC9mEXGAZS0lhniJL24s7Ez3mgvSQYYOdLZ32xny8=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "b",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-09-02T20:56:18.183Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$1500000$l48WiptYxBkMuL0QtUZvND$U2RcrBleLOocXY45SlHoqQSGoWWQt8Xg9Mg0rl4tDkA=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sard",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2026-09-08T17:41:44.308Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$1500000$pdGOtp9Gr9u6evJegrjuq6$qrTrGvVO8Ds+WP8BaKBYYFvFfW7/Waq9PvPQ3iBczlQ=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sdar",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": false,
+            "date_joined": "2026-09-08T17:42:07.530Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "5c9db2nrujkjtn6adzldtsejpsalqt6t",
+        "fields": {
+            "session_data": ".eJxVjEEOgjAQRe_StWlah8Lg0r1nIPPpIKhpEwor492FhIVu33v_v00n6zJ2a9G5m6K5GG9OvwzSPzXtIj4k3bPtc1rmCXZP7GGLveWor-vR_h2MUsZtDfEecHCxHVoOQhWBuOZA4QwdnKdmo2hUPVWBWlc3TMxgQhQEmM8X1is3bQ:1wwkNk:g3oo6LbqMyQWeoJlcryThxvz6XTHG4i8p7RheAEUlSM",
+            "expire_date": "2026-09-02T17:47:20.841Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "6j3z7uvexkxva1bqkfjfe4zm1sjdpeth",
+        "fields": {
+            "session_data": ".eJxVjEEOgjAQRe_StWlah8Lg0r1nIPPpIKhpEwor492FhIVu33v_v00n6zJ2a9G5m6K5GG9OvwzSPzXtIj4k3bPtc1rmCXZP7GGLveWor-vR_h2MUsZtDfEecHCxHVoOQhWBuOZA4QwdnKdmo2hUPVWBWlc3TMxgQhQEmM8X1is3bQ:1x1rhh:dCydnElbI116Wv7K0g3TGS25W842cIZw20z-n7Dy-mc",
+            "expire_date": "2026-09-16T20:37:05.372Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "e7hm5vxesmfhdqd4vyjsgzslc1ddf9n9",
+        "fields": {
+            "session_data": ".eJxVjEEOgjAQRe_StWlah8Lg0r1nIPPpIKhpEwor492FhIVu33v_v00n6zJ2a9G5m6K5GG9OvwzSPzXtIj4k3bPtc1rmCXZP7GGLveWor-vR_h2MUsZtDfEecHCxHVoOQhWBuOZA4QwdnKdmo2hUPVWBWlc3TMxgQhQEmM8X1is3bQ:1wyD5b:g0Jmy5H_8QKZ4LjgPW7fet2N4Mf5tOufaf3I-F9rtmg",
+            "expire_date": "2026-09-06T18:38:39.889Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "g03ezcwg10s1tpook5x8j1ikbvkq4a19",
+        "fields": {
+            "session_data": ".eJxVjEEOgjAQRe_StWlah8Lg0r1nIPPpIKhpEwor492FhIVu33v_v00n6zJ2a9G5m6K5GG9OvwzSPzXtIj4k3bPtc1rmCXZP7GGLveWor-vR_h2MUsZtDfEecHCxHVoOQhWBuOZA4QwdnKdmo2hUPVWBWlc3TMxgQhQEmM8X1is3bQ:1wzpXt:cbVs_UhBLQJEEo-1CrgHq2x2_OfkucfOiSm9TL9vzGw",
+            "expire_date": "2026-09-11T05:54:33.416Z"
+        }
+    },
+    {
+        "model": "product.category",
+        "pk": 2,
+        "fields": {
+            "name": "Ноутбуки"
+        }
+    },
+    {
+        "model": "product.category",
+        "pk": 3,
+        "fields": {
+            "name": "Аксесуары"
+        }
+    },
+    {
+        "model": "product.product",
+        "pk": 2,
+        "fields": {
+            "title": "us",
+            "descriptions": "Игой Ноутбук",
+            "price": "799.00",
+            "category": 3
+        }
+    },
+    {
+        "model": "product.product",
+        "pk": 3,
+        "fields": {
+            "title": "JBL",
+            "descriptions": "Проводные Наушники",
+            "price": "2499.00",
+            "category": 3
+        }
+    },
+    {
+        "model": "product.product",
+        "pk": 4,
+        "fields": {
+            "title": "Hp elite book",
+            "descriptions": "laptop for school",
+            "price": "45500.00",
+            "category": 2
+        }
+    },
+    {
+        "model": "product.review",
+        "pk": 2,
+        "fields": {
+            "text": "Очень понравился",
+            "product": 2,
+            "stars": 4
+        }
+    },
+    {
+        "model": "product.review",
+        "pk": 3,
+        "fields": {
+            "text": "Отличный звук",
+            "product": 3,
+            "stars": 5
+        }
+    },
+    {
+        "model": "users.verifycodemodel",
+        "pk": 1,
+        "fields": {
+            "user": 2,
+            "code": 498560
+        }
+    },
+    {
+        "model": "users.verifycodemodel",
+        "pk": 3,
+        "fields": {
+            "user": 5,
+            "code": 538256
+        }
+    }
+]
