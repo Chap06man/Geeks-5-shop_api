@@ -1,6 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django.contrib.auth.models import User
+from .models import CustomUser
 from rest_framework import status
 
 from django.contrib.auth import authenticate
@@ -22,9 +22,9 @@ from .serializer import (
 class RegisterView(APIView):
 
     def post(self, request):
-        username = request.data.get('username')
+        email = request.data.get('email')
         password = request.data.get('password')
-        user = User.objects.create_user(username=username,password=password)
+        user = CustomUser.objects.create_user(email=email,password=password)
 
         user.is_active = False
         user.save()
@@ -36,9 +36,9 @@ class RegisterView(APIView):
 class ConfirmView(APIView):
 
     def post(self, request):
-        username = request.data.get('username')
+        email = request.data.get('email')
         code = request.data.get('code')
-        user = User.objects.get(username=username)
+        user = CustomUser.objects.get(email=email)
         verify_code = VerifyCodeModel.objects.get(user=user)
         if verify_code.code == int(code):
             user.is_active = True
@@ -50,9 +50,9 @@ class ConfirmView(APIView):
 class LoginView(APIView):
 
     def post(self, request):
-        username = request.data.get('username')
+        email = request.data.get('email')
         password = request.data.get('password')
-        user = authenticate(username=username,password=password)
+        user = authenticate(email=email,password=password)
         if user is None:
             return Response({"error": "Неверный логин или пароль"})
         if not user.is_active:
