@@ -1,20 +1,17 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status
 from . models import *
 from . serializer import CatySeriaList,CatySeriaDetail, ProdSeriaList,ProdSeriaDetail,ReviewSeriaDetail,ReviewSeriaList,ProdRevSeriaList,CatyValidateSerializer,ProductValidateSeriaLizer,ReviewValidateSeria
-from django.db import transaction
-
-
-from rest_framework.generics import ListAPIView,RetrieveUpdateDestroyAPIView,ListCreateAPIView
-from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticated,BasePermission
+from common.permission import IsModerator
+from rest_framework.generics import RetrieveUpdateDestroyAPIView,ListCreateAPIView
 from rest_framework.viewsets import ModelViewSet
 
 #for Category
 class ListCategoryApiViews(ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CatySeriaList
+    permission_classes = [IsAuthenticated]
 
 class DetailCategoryApiViews(RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
@@ -22,14 +19,10 @@ class DetailCategoryApiViews(RetrieveUpdateDestroyAPIView):
     lookup_field = 'id'
 
 #for Product 
-class ListProductApiViews(ListCreateAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProdRevSeriaList
-
-class DetailProductApiViews(RetrieveUpdateDestroyAPIView):
+class ProductModelView(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProdSeriaDetail
-    lookup_field = 'id'
+    permission_classes = [IsModerator]
 
 #for Reviews 
 class ListReviewstApiViews(ListCreateAPIView):
