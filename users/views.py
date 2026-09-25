@@ -49,6 +49,7 @@ class LoginView(APIView):
         if not user.is_active:
             return Response({"error": "Пользователь не подтверждён"},status=status.HTTP_403_FORBIDDEN)
         token, created = Token.objects.get_or_create(user=user)
+    
 
         return Response({"message": "Авторизация успешна","token": token.key})
 

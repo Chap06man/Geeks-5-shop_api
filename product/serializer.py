@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import *
 from django.db.models import Avg
 from rest_framework.exceptions import ValidationError
+from common.validators import validators_age
 
 #1-Homework
 #Category 
@@ -31,6 +32,13 @@ class  ProdSeriaDetail(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = '__all__'
+        
+    def validate(self, attrs):
+        user = self.context['request'].user
+
+        validators_age(user)
+
+        return attrs
 
 #Review
 class ReviewSeriaList(serializers.ModelSerializer):

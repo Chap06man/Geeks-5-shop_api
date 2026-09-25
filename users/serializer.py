@@ -2,6 +2,8 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.exceptions import ValidationError
 
+class GoogleSerializer(serializers.ModelField):
+    code = 1
 
 class UserBaseSerializer(serializers.Serializer):
     username = serializers.CharField(max_length=25)
