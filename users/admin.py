@@ -1,4 +1,4 @@
 from django.contrib import admin
-from . models import VerifyCodeModel
-# Register your models here.
-admin.site.register(VerifyCodeModel)
+from django.contrib.auth.models import User
+from . models import CustomUser
+admin.site.register(CustomUser)

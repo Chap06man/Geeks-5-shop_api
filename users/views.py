@@ -2,20 +2,10 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import CustomUser
 from rest_framework import status
-
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 import random
-from . models import VerifyCodeModel
-
 from rest_framework.views import APIView
-
-from .serializer import (
-    UserCreateSerializer,
-    UserAuthSerializer,
-    VerifyCodeValid
-    )
-
 #<-------------------------------------------------------------------------------------------------------------->
 
 #class for registration 
@@ -29,7 +19,7 @@ class RegisterView(APIView):
         user.is_active = False
         user.save()
         code = random.randint(100000, 999999)
-        VerifyCodeModel.objects.create(user=user,code=code)
+        # VerifyCodeModel.objects.create(user=user,code=code)
         return Response({"message": "Код подтверждения создан"})
 
 #class for confirm
@@ -39,8 +29,7 @@ class ConfirmView(APIView):
         email = request.data.get('email')
         code = request.data.get('code')
         user = CustomUser.objects.get(email=email)
-        verify_code = VerifyCodeModel.objects.get(user=user)
-        if verify_code.code == int(code):
+        if user.is_authenticated:
             user.is_active = True
             user.save()
             return Response({"message": "Пользователь подтверждён"})
@@ -48,17 +37,20 @@ class ConfirmView(APIView):
     
 #class for login 
 class LoginView(APIView):
-
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
-        user = authenticate(email=email,password=password)
-        if user is None:
-            return Response({"error": "Неверный логин или пароль"})
-        if not user.is_active:
-            return Response({"error": "Пользователь не подтверждён"})
-        return Response({"message": "Авторизация успешна"})
 
+        user = authenticate(email=email,password=password)
+
+        if user is None:
+            return Response({"error": "Неверный логин или пароль"},status=status.HTTP_401_UNAUTHORIZED)
+
+        if not user.is_active:
+            return Response({"error": "Пользователь не подтверждён"},status=status.HTTP_403_FORBIDDEN)
+        token, created = Token.objects.get_or_create(user=user)
+
+        return Response({"message": "Авторизация успешна","token": token.key})
 
 #registration
 # @api_view(['GET','POST'])

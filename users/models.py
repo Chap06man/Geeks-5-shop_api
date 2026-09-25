@@ -1,8 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
-from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser,PermissionsMixin,BaseUserManager)
-from django.conf import settings
 
 class CustomUserManager(BaseUserManager):
 
@@ -40,18 +37,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     objects = CustomUserManager()
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['phone_number']
 
     def __str__(self):
         return self.email
-
-
-#model for CODE-------------------------------------------------------------------------------------------
-class VerifyCodeModel(models.Model):
-    user = models.OneToOneField(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
-    )
-    code = models.IntegerField()
 
     
