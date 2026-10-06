@@ -55,3 +55,7 @@ class ConfirmationCode(models.Model):
 
     def __str__(self):
         return f"Код подтверждения для {self.user.email}"
+
+class LoginTime(models.Model):
+    user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    time_login = models.DateTimeField(auto_now_add=True)

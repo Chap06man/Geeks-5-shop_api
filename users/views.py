@@ -1,6 +1,6 @@
 import random
 import redis
-
+from .tasks import send_otp_mail
 from django.contrib.auth import authenticate
 from django.db import transaction
 
@@ -11,7 +11,7 @@ from rest_framework.response import Response
 
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from .models import CustomUser
+from .models import CustomUser ,LoginTime
 from .serializer import (
     AuthValidateSerializer,
     ConfirmationSerializer,
@@ -36,6 +36,8 @@ class AuthorizationAPIView(CreateAPIView):
                     data={"error": "User account is not activated yet!"},)
             token, _ = Token.objects.get_or_create(user=user)
             return Response(data={"key": token.key})
+
+        LoginTime.objects.create(user=user)
 
         return Response(
             status=status.HTTP_401_UNAUTHORIZED,
@@ -66,6 +68,7 @@ class RegistrationAPIView(CreateAPIView):
             )
 
         code = random.randint(100000, 999999)
+        send_otp_mail.delay(email, code)
 
         redis_client.set(
             f"confirmation_code:{user.id}",
