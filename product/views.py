@@ -1,11 +1,13 @@
-from django.shortcuts import render
-from rest_framework.decorators import api_view
 from . models import *
-from . serializer import CatySeriaList,CatySeriaDetail, ProdSeriaList,ProdSeriaDetail,ReviewSeriaDetail,ReviewSeriaList,ProdRevSeriaList,CatyValidateSerializer,ProductValidateSeriaLizer,ReviewValidateSeria
+from django.core.cache import cache
+from rest_framework import status
+from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated,BasePermission
+from . serializer import CatySeriaList,CatySeriaDetail, ProdSeriaList,ProdSeriaDetail,ReviewSeriaDetail,ReviewSeriaList,ProdRevSeriaList,CatyValidateSerializer,ProductValidateSeriaLizer,ReviewValidateSeria
 from common.permission import IsModerator
 from rest_framework.generics import RetrieveUpdateDestroyAPIView,ListCreateAPIView
 from rest_framework.viewsets import ModelViewSet
+from . tasks import add
 
 #for Category
 class ListCategoryApiViews(ListCreateAPIView):
@@ -23,6 +25,21 @@ class ProductModelView(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProdSeriaDetail
     permission_classes = [IsModerator]
+
+    def get(self, request, *args, **kwargs):
+        # from time import sleep
+
+        # sleep(15)
+        add.delay(5, 7)
+        cached_data = cache.get("product_list")
+        if cached_data:
+            print("Redis " * 20)
+            return Response(data=cached_data, status=status.HTTP_200_OK)
+        response = super().get(self, request, *args, **kwargs)
+        print("Postgres " * 20)
+        if response.data.get("total", 0) > 0:
+            cache.set("product_list", response.data, timeout=30)
+        return response
 
 #for Reviews 
 class ListReviewstApiViews(ListCreateAPIView):
