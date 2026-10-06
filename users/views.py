@@ -1,6 +1,6 @@
 import random
 import redis
-from .tasks import send_otp_mail
+from .tasks import send_otp_mail,login_static_mail
 from django.contrib.auth import authenticate
 from django.db import transaction
 
@@ -38,6 +38,7 @@ class AuthorizationAPIView(CreateAPIView):
             return Response(data={"key": token.key})
 
         LoginTime.objects.create(user=user)
+        login_static_mail.delay()
 
         return Response(
             status=status.HTTP_401_UNAUTHORIZED,
