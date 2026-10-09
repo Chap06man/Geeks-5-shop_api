@@ -1,5 +1,4 @@
 import os
-
 from celery import Celery
 from celery.beat import crontab
 

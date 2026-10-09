@@ -25,8 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEBUG",cast=bool)
-
+DEBUG = config("DEBUG", cast=bool, default=False)
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
@@ -96,11 +95,11 @@ WSGI_APPLICATION = 'main.wsgi.application'
 DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.postgresql',
-         'NAME': os.environ.get('NAME_DB'),
-         'USER': os.environ.get('USER_DB'),
-         'PASSWORD': os.environ.get('PASSWORD_DB'),
-         'HOST': os.environ.get('HOST_DB'),
-         'PORT': os.environ.get('PORT_DB')
+         'NAME': config('NAME_DB'),
+         'USER': config('USER_DB'),
+         'PASSWORD': config('PASSWORD_DB'),
+         'HOST': config('HOST_DB'),
+         'PORT': config('PORT_DB')
      }
  }
 
@@ -188,8 +187,8 @@ CACHES = {
     }
 }
 
-CELERY_BROKER_URL = "redis://127.0.0.1:6379/8"
-CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/8"
+CELERY_BROKER_URL = config("CELERY_BROKER_URL")
+CELERY_RESULT_BACKEND = config("CELERY_RESULT_BACKEND")
 
 EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool)
 EMAIL_HOST = config("EMAIL_HOST")
